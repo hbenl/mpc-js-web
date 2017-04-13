@@ -4,7 +4,8 @@
   "description": "A javascript client library for the Music Player Daemon - web browser package",
   "files": [
     "lib",
-    "umd"
+    "umd",
+    "README.md"
   ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
