@@ -13,4 +13,4 @@ This is the web package containing the browser-specific networking code.
 
 Installation and usage examples for mpc.js can be found [here](https://github.com/hbenl/mpc-js-node)
 and [Typedoc](http://typedoc.org/)-generated API documentation is available 
-[here](https://hbenl.github.io/mpc-js-core/typedoc/classes/_mpc_.mpc.html).
+[here](https://hbenl.github.io/mpc-js-core/typedoc/classes/_mpccore_.mpccore.html).
