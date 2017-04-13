@@ -1,0 +1,31 @@
+{
+  "name": "mpc-js-web",
+  "version": "1.0.0",
+  "description": "A javascript client library for the Music Player Daemon - web browser package",
+  "files": [
+    "lib",
+    "umd"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "rm -Rf lib umd && npm run-script build",
+    "build": "tsc && mkdir -p umd && webpack --entry ./lib/mpc.js --optimize-minimize --output-library MPC --output-library-target umd --output-path umd --output-filename mpc.min.js"
+  },
+  "keywords": [
+    "mpd"
+  ],
+  "author": "Holger Benl <hbenl@evandor.de>",
+  "license": "MIT",
+  "dependencies": {
+    "mpc-js-core": "^1.0.0",
+    "base64-js": "^1.2.0",
+    "@types/base64-js": "^1.2.5",
+    "text-encoder-lite-module": "github:hbenl/TextEncoderLiteModule"
+  },
+  "devDependencies": {
+    "typescript": "^2.2.2",
+    "webpack": "^2.3.3"
+  }
+}

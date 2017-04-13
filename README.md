@@ -1,0 +1,16 @@
+# mpc.js
+
+mpc.js is a javascript client library for the [Music Player Daemon](https://www.musicpd.org/).
+
+It features a Promise-based API for all [mpd commands](https://www.musicpd.org/doc/protocol/command_reference.html),
+type definitions for [Typescript](https://www.typescriptlang.org/) and works in both
+[node.js](https://nodejs.org/) and current browsers (connecting to mpd through a WebSocket bridge
+like [websockify](https://github.com/kanaka/websockify)).
+
+This is the web package containing the browser-specific networking code.
+
+## Documentation
+
+Installation and usage examples for mpc.js can be found [here](https://github.com/hbenl/mpc-js-node)
+and [Typedoc](http://typedoc.io/)-generated API documentation is available 
+[here](https://hbenl.github.io/mpc-js/typedoc/classes/_mpc_.mpc.html).
