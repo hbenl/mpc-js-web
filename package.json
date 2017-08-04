@@ -1,6 +1,6 @@
 {
   "name": "mpc-js-web",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A javascript client library for the Music Player Daemon - web browser package",
   "files": [
     "lib",
