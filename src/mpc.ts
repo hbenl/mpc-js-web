@@ -3,8 +3,8 @@ import { WebSocketWrapper } from './socketWrapper';
 
 export class MPC extends MPCCore {
 
-	public connectWebSocket(url: string) {
-		this.connect(new WebSocketWrapper(url));
+	public connectWebSocket(url: string): Promise<void> {
+		return this.connect(new WebSocketWrapper(url));
 	}
 
 }
