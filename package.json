@@ -12,7 +12,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublish": "rm -Rf lib umd && npm run-script build",
-    "build": "tsc && mkdir -p umd && webpack --entry ./lib/mpc.js --optimize-minimize --output-library MPC --output-library-target umd --output-path umd --output-filename mpc.min.js"
+    "reinstall": "rimraf node_modules package-lock.json && npm install",
+    "clean": "rimraf out vscode-test-explorer-*.vsix",
+    "build": "tsc && mkdir -p umd && webpack --entry ./lib/mpc.js --optimize-minimize --output-library MPC --output-library-target umd --output-path umd --output-filename mpc.min.js",
+    "watch": "tsc -w",
+    "rebuild": "npm run clean && npm run build"
   },
   "keywords": [
     "mpd"
@@ -34,6 +38,7 @@
     "text-encoder-lite-module": "github:hbenl/TextEncoderLiteModule"
   },
   "devDependencies": {
+    "rimraf": "^2.6.2",
     "typescript": "~2.4.2",
     "webpack": "^3.4.1"
   }
