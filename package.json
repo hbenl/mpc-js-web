@@ -14,7 +14,7 @@
     "prepublish": "rm -Rf lib umd && npm run-script build",
     "reinstall": "rimraf node_modules package-lock.json && npm install",
     "clean": "rimraf out vscode-test-explorer-*.vsix",
-    "build": "tsc && mkdir -p umd && webpack --entry ./lib/mpc.js --optimize-minimize --output-library MPC --output-library-target umd --output-path umd --output-filename mpc.min.js",
+    "build": "tsc && mkdir -p umd && webpack --entry ./lib/mpc.js --mode=production --output-library MPC --output-library-target umd --output-path umd --output-filename mpc.min.js",
     "watch": "tsc -w",
     "rebuild": "npm run clean && npm run build"
   },
@@ -32,14 +32,15 @@
     "url": "https://github.com/hbenl/mpc-js-web/issues"
   },
   "dependencies": {
-    "mpc-js-core": "^1.2.0",
-    "base64-js": "^1.2.1",
+    "mpc-js-core": "^1.2.2",
+    "base64-js": "^1.3.0",
     "@types/base64-js": "^1.2.5",
     "text-encoder-lite-module": "github:hbenl/TextEncoderLiteModule"
   },
   "devDependencies": {
-    "rimraf": "^2.6.2",
-    "typescript": "~2.4.2",
-    "webpack": "^3.4.1"
+    "rimraf": "^2.6.3",
+    "typescript": "~3.5.3",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
   }
 }
