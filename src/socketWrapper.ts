@@ -25,11 +25,11 @@ export class WebSocketWrapper implements SocketWrapper {
 
 		this.wsClient = new WebSocket(this.url, ['base64']);
 
-		let promise = new Promise<void>((resolve, reject) => {
+		const promise = new Promise<void>((resolve, reject) => {
 			this.deferred = { resolve, reject };
 		});
 
-		this.wsClient.onmessage = (e) => {
+		this.wsClient.onmessage = e => {
 			if (this.deferred) {
 				this.deferred.resolve();
 				this.deferred = undefined;
@@ -37,7 +37,7 @@ export class WebSocketWrapper implements SocketWrapper {
 			receive(this.textDecoder.decode(base64.toByteArray(e.data)));
 		}
 
-		this.wsClient.onerror = (err) => {
+		this.wsClient.onerror = err => {
 			if (this.deferred) {
 				this.deferred.reject(err);
 				this.deferred = undefined;
@@ -47,7 +47,7 @@ export class WebSocketWrapper implements SocketWrapper {
 			}
 		}
 
-		this.wsClient.onclose = (event) => {
+		this.wsClient.onclose = event => {
 			if (this.deferred) {
 				this.deferred.reject(event);
 				this.deferred = undefined;
