@@ -1,5 +1,5 @@
 import * as base64 from 'base64-js';
-import { TextEncoderLite, TextDecoderLite } from 'text-encoder-lite-module';
+import { TextEncoderLite, TextDecoderLite } from 'text-encoder-lite';
 import { SocketWrapper } from "mpc-js-core";
 
 interface Deferred {
